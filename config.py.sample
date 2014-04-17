@@ -1,0 +1,4 @@
+conf = {
+    'email_user_name': 'username',
+    'email_password': 'password'
+}
