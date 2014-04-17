@@ -3,9 +3,15 @@ import json
 from parser import Parser
 from email_sender import Email
 from config import conf
+import time
 
-res = requests.get('https://fwctickets.fifa.com/TopsAkaCalls/Calls.aspx/getBasicData?l=en&c=OTH')
-res.raise_for_status()
+while True:
+    res = requests.get('https://fwctickets.fifa.com/TopsAkaCalls/Calls.aspx/getBasicData?l=en&c=OTH')
+    if res.ok:
+        break
+    else:
+        print 'sleep for 5 seconds and retry'
+        time.sleep(5)
 data = res.json()
 parser = Parser(data)
 
