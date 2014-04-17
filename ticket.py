@@ -4,13 +4,15 @@ from parser import Parser
 from email_sender import Email
 from config import conf
 import time
+import logging
 
+logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
 while True:
     res = requests.get('https://fwctickets.fifa.com/TopsAkaCalls/Calls.aspx/getBasicData?l=en&c=OTH')
     if res.ok:
         break
     else:
-        print 'sleep for 5 seconds and retry'
+        logging.info('sleep for 5 seconds and retry')
         time.sleep(5)
 data = res.json()
 parser = Parser(data)
@@ -24,6 +26,6 @@ for prod in products:
             msg += '\n\n'
             msg += json.dumps({'ticket': tic}, indent=4)
             Email.send_email(conf['email_user_name'], 'Ticket Available!', msg)
-            print 'Tickets found! Email sent'
+            logging.info('Tickets found! Email sent')
         else:
-            print 'No tickets :( Email not sent'
+            logging.info('No tickets :( Email not sent')
