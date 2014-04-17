@@ -18,3 +18,6 @@ for prod in products:
             msg += '\n\n'
             msg += json.dumps({'ticket': tic}, indent=4)
             Email.send_email(conf['email_user_name'], 'Ticket Available!', msg)
+            print 'Tickets found! Email sent'
+        else:
+            print 'No tickets :( Email not sent'
