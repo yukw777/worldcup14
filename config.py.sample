@@ -1,4 +1,5 @@
 conf = {
     'email_user_name': 'username',
-    'email_password': 'password'
+    'email_password': 'password',
+    'email_list': [],
 }

@@ -25,7 +25,8 @@ for prod in products:
             msg = json.dumps({'product': prod}, indent=4)
             msg += '\n\n'
             msg += json.dumps({'ticket': tic}, indent=4)
-            Email.send_email(conf['email_user_name'], 'Ticket Available!', msg)
+            for email in conf['email_list']:
+                Email.send_email(email, 'Ticket Available!', msg)
             logging.info('Tickets found! Email sent')
         else:
             logging.info('No tickets :( Email not sent')
