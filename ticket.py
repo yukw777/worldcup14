@@ -46,7 +46,7 @@ def find_tickets(team1, team2, categories=['CAT1', 'CAT2', 'CAT3']):
 find_tickets('Korea Republic', 'Belgium', categories=['CAT1'])
 
 # Belgium vs Russia
-#find_tickets('Belgium', 'Russia')
+find_tickets('Belgium', 'Russia')
 
 # Ecuador vs France
 #find_tickets('Ecuador', 'France')
