@@ -57,3 +57,5 @@ find_tickets('Argentina', 'Bosnia-Herzegovina')
 # Ghana v USA
 find_tickets('Ghana', 'USA')
 
+# Spain v Chile
+find_tickets('Spain', 'Chile')
