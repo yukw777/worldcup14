@@ -50,3 +50,10 @@ find_tickets('Belgium', 'Russia')
 
 # Ecuador vs France
 #find_tickets('Ecuador', 'France')
+
+# Argentina v Bosnia-Herzegovina
+find_tickets('Argentina', 'Bosnia-Herzegovina')
+
+# Ghana v USA
+find_tickets('Ghana', 'USA')
+
